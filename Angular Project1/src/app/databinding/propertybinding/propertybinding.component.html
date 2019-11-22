@@ -1,0 +1,32 @@
+<h1 [innerText]="name"></h1>
+<img [src]="imgurl" alt=" "[class.rounded-circle]="isActive">
+<h2 [style.color]="colorName" [class.bg-success]="isActive " [class.bg-warning]="!isActive">{{address}}</h2>
+<table class="table table-dark table-borderedtable striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th [attr.colspan]="colspanvalue">Contact Number</th>
+        </tr>
+    </thead>
+        <tbody>
+            <tr>
+                <td>siri</td>
+                <td>22</td>
+                <td>4843218756</td>
+                <td>5564651321</td>
+            </tr>
+            <tr>
+                <td>siri</td>
+                <td>22</td>
+                <td>4843218756</td>
+                <td>5564651321</td>
+            </tr>
+            <tr>
+                <td>siri</td>
+                <td>22</td>
+                <td>4843218756</td>
+                <td>5564651321</td>
+            </tr>
+        </tbody>
+</table>
