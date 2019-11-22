@@ -1,0 +1,14 @@
+class  MainArr6
+{
+    public static void main(String[] args)
+     {
+	ArrayOperation6 ao=new ArrayOperation6();
+         	System.out.println("Enter how many numbers you want");
+	int x[]=ao.readArr();
+	System.out.println("Enter how many numbers you want");
+	int y[]=ao.readArr();
+	System.out.println("After union");	
+	int a[]=ao.union(x,y);
+	ao.dispArr(a);
+       }
+}

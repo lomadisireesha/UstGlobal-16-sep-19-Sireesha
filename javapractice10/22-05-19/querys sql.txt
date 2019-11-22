@@ -1,0 +1,175 @@
+=>show databases;
+=>use database_name;
+=>desc table-name;
+=>select * from table_name;
+=>create table table_name (col_name dt1 , col_name dt2....);
+=>drop table table_name;
+=>drop database database_name;
+=>alter table table_name add_column column_name datatype;
+=>alter table table_name change old_name new column_name dt;
+=>alter table table_name drop column col_name;
+=>rename table old_tablename to new table name;
+=>insert into table_name (col_name1,col_name2....)values(val1,val2....);//for particular insertion
+=>insert into table_name values(val1,val2....);
+=>insert into table_name (col_name1,col_name2....)values(val1,val2....)(val1,val2....)(val1,val2....)//to insert multiple records//
+=>update table_name set col_name=value;
+=>delete from table_name;
+=>delete from table_name where col_name=value;
+=>select col_name from table_name;
+=>truncate table table_name;
+=>select distinct col_name from table_name;
+=>select col-name as alias_name from table_name;
+=> select col-name  alias_name from table_name;
+=>select * from emp where condition;
+=>update table_name set col_name = val where col_name=value;
+=>Write a query to display  the salary of the employee that is incremented by 5000?
+=>Write a query to display  the salary of the employee that is decremented by 5000?
+=>w.a.q to display all employee details who is working in deptno 20 as well as sal is greater than 25000?
+=>w.a.q to display name,sal from the emp table who is working in deptmo 10 &20?
+=>w.a.q to display emp detail who job profile is tester and age=25?
+=>w.a.q  to display all the record of the emp who is working as a tester or having sal more than 40000? 
+=>w.a.q to diplay name sal age from emp table who is working in deptno 10 or 40 or 50?
+=>w.a.q to display emp details whose age is more  than 25 and bloodgroup is b+ve?
+=>w.a.q to display all the record of the emp excluding tester?
+	select * from emp where not designation='tester';
+=>w..a.q to display name of all the emp who is working as a hr or tester and sal >40000?
+	 select * from emp where designation='hr' or designation='tester' and sal>40000;
+=>w.q.a to display the annual  sal?
+	 select sal*12  from emp; 
+=>w.q.a to display the result of the emp table whose job designation is developer?
+	 select * from emp where designation='developer';
+=>w.q.a to display the all the records exculding whose is working in deptno 20?
+	 select * from emp where not deptno=20;
+=>w.a.q to display the record of the emp whose sal is more than 20000?
+	 select * from emp where sal>200000;
+=>w.a.q to display the record of the emp whose age is less than 30?
+	 select * from emp where age >30;
+=>w.a.q to display name,sal,email,mobile whose age is >=18?
+	 select name,sal,email,mobile  from emp where age>=18; 
+=>w.a.q to display whose sal is <=40000?
+  	 select * from emp where sal>40000;
+=>w.a.q to display  all emp excluding software developwer who are working in dept nom 40?
+ 	select * from emp where not (designation='developer' and deptno =40); 
+	order of execution not then and
+=>w.a.q to display all the developer who are working for deptno 10 or 40?
+     	 select * from emp where designation='developer' and (deptno=10 or deptno=12);
+*************** IN ****************
+=>w.a.q to dispaly all the emp details who are working in 10,20,30?
+   	   select * from emp where deptno in(52,62,2,9);
+=>w.a.q to display name of all the emp who are working as tester hr support?
+=>w.a.q to display  of all the emp who are working as tester hr support and working in deptno 10,20,60 and sal is >40000?
+	select * from emp where designation in('tester','hr','support') and deptno in(62,52,2) and sal>40000;
+************ NOT IN**********
+=>w.a.q to display all the records of emp excluding who is working as tester,support,hr?
+	 select * from emp where designation not in('tester','hr','support');
+=>w.a.q to display all the details of a emp whose age is 25,20,30,40 exclude all the detail of tester and developer?
+	select * from emp where age in (21,52,65) and designation not in('tester','developer');
+************ B/W *************
+=>w.a.q to display all the details of emp whose age is between 20 to 40?
+	 select * from emp where age between 20  and 40;
+=>w.a.q to display all the details who hired in 2017?
+	select * from emp where hiredate between '2009-01-01' and '2009-12-31';
+=>w.a.q to display all the records of the emp excluding whose sal is in the range of 25000 to 50000?
+	select * from emp where sal not between 25000 and 50000;
+***********   IS   ********
+=>select * from emp where col_name is null
+=>select * from emp where col_name is not null
+***************   LIKE *****************
+=> '% ' =>0 to  n  ,when we want to match more tha one character
+=>' _' => holds single value,when we want to match only one character
+        both should be in single quote
+ 	select * from emp where name like '%y';
+=> w.a.q to display all the details of the emp whose name is starts with S?
+ 	select * from emp where ename like 's%';
+=> w.a.q to display name of the emp whose second charcter is I?
+	select * from emp where ename like '_i%';
+=> w.a.q to display the name of the emp which has atleast two L in their name ?
+	select * from emp where ename like '%l%l%';
+=> w.a.q to display the name whos name starts with s and ends with i?
+	select * from emp where ename like 's%i';
+=>w.a.q to display all the records of the emp if the emp name begins with l or s?
+	select * from emp where ename like 'l%' or ename like 's%';
+=>w.a.q to display emp name sal who is working in deptno 10 20 30 and job designation starts with 's'?
+	select ename,sal from emp where deptno in (10,62,30) and designation like 's%';
+******************** Functions ****************************
+=>single row functions(scalar)
+=>multi row functions(aggregate)
+      	* select sum(sal) from emp;
+	 *select avg(sal) from emp;
+	* select max(sal) from emp;
+	*select min(sal) from emp;
+	* select count(*) from emp;	
+**************** Order by *******************
+=> to sort the records either in asc or desc by default it is asc
+	select * from table_name where condition order by col_name asc/desc
+=>w.a.q to display all the result of the emp and sal should be in descinding order?
+	select * from emp order by sal desc;
+***********************Sub-Query***********************
+	select * from table_name where col_name operator (select * from table_name);// single row sub-query,when ever we use relational operator or  comparison operator we get only one result set so it is single row sub-query.
+=> w.a.q to display all the record of the emp who's date of joining is same as lalith?
+	 select * from emp where hiredate =( select hiredate from emp where ename='lalith');
+=>w.a.q to display the second max sal?
+	select max(sal) from emp where sal<(select max(sal) from emp);
+    ANY: it satisfies only any one condition
+   ALL: it satisfies all conditions
+=> select * from table_name where col_name operator (select * from table_name);//in operator place we can use like in ,any,all
+=>w.a.q to display name of the emp who is working in loc which has atleast one A in the location?
+	select ename from emp where deptno in (select deptno from dept where loc like '%a%');
+ =>w.a.q to display all the records of the emp who is working in tester,support,development?
+	 select * from emp where deptno in ( select deptno from dept where deptname in('tester','development','support'));
+******************* Group by Clause *************************
+	select  count(*)  from  emp  group by  deptno;
+=>w.a.q to display the max sal for each dept?
+	select max(sal) from emp group by deptno;
+=>w.a.q to display the  highest sal given to hr in each dept?
+	select max(sal) from emp where designation='hr' group by deptno;
+********************Having clause *********************
+    select * from table_name where condition group by col_name having condition;
+=>w.a.q to display deptno which has atleast two emp working?
+	 select deptno from emp group by deptno having count(*)>=2;
+=>in where clause we have to pass only one condition
+     commit;//permanently saved
+**********************JOINS***********************
+=>first table of the records all merge with second table
+ 	 select * from table_name1 CROSS join table_name;
+Inner join is used to obtained only matching record from the table
+	select * from table_name1 INNER join table_name2 on condition //ANSI
+	select * from table_name1,table_name2 where <join condition>//oracle
+**************Outer Join ****************
+	Left Outer Join : It is the combination of inner join and unmatched record present inside the left table
+			select * from table_name 1 left outer join table_name2 on condition;//ANSI
+			select * from table1,table2 where T1.col_name =T2.col_name2;//Oracle
+	Right Outer Join : select * from table_name 1 right outer join table_name2 on condition;//ANSI
+			select * from table1,table2 where T1.col_name =T2.col_name2;//Oracle
+	Full Outer Join : It is a combination inner join and unmatched records present in the both the tables
+Natural Join : It is similar to inner join where we do not specify the join. It provides output if there are common columns.
+Self  Join : Joining of two same table is known as Self Joining. We use this join whenever to selected is within in the same table.
+	select * from table T1 join table T2 on condition;
+	select * from table T1,table T2 where condition;
+**************** Key Attributes ***************
+	=> the attribute with the help of which we can get a record uniquely
+NON-key attribute:-
+	=>all the attributes except key attributes is known as non-key attribute
+Prime key:-
+	=>Among the key attributes to choosen to identify the records uniquely in the table 
+	=>Except prime key attributes all attribute are non-prime key
+Composite Key:-
+	=>the combination of two or more keys attribute which is used to identify a record uniquely
+Super Key:-
+	=>The set of all the key attributes are known as Super Key.
+************** Functional dependency ********************
+	=> A relation which exist such that attributes determine another attribute uniquely that is known as Functional dependence.
+	      r->{x,y}
+		x- determined//unique
+		y-dependent
+	1)total functional dependence:- If all the attributes of relation determined by a key attributes .
+				r->{A,B,C,D}
+				A-determined, {B,C,D}- dependent
+	2)partial:- => A relation is said to have partial if it consist a composite key attribute
+		=>their exist  a dependence such that an attribute can be determine by the other attribute which is the part of other attribute
+			{AB}->{C,D}
+			{A}->{B}
+			{C}->{D}
+	3)transistive:- A relation is said to have a transistive function
+			* their exists a relation such that an attribute is determined by a non key attribute which intern is determined by key 			   attribute
+'  

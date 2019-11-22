@@ -1,0 +1,48 @@
+->BMI=weight/height*height
+->ferinheat=celcius value*(9/5)+32
+->area=PI*r*r
+->circumference=2*PI*r*r
+->Rectangle=Length*Breadth
+->Simple Interest=ptr/100
+->logics for even numbers:
+->n%2==0
+->n/2*2==0
+->if(n&1==0)
+->switch(n%2==0)
+->**(String st[]={"Even","Odd"};
+int n=sc.nextInt();
+System.out.println(n+"is"+st[n%2]+" Number);)**
+->Leap year: (n%400==0||n%4==0&&n%100!=0)
+->**(Special two Digit Number=(d1+d2)+(d1*d2)
+          d1=n/10
+          d2=n%10)**
+->if(n1<n2)//least number condition
+->if(n1>n2)//biggest number condition
+-> if(a>b&&a>c)
+          System.out.println(a+" is biggest");
+      else if(b>c)
+          System.out.println(b+"is biggest");
+      else
+          System.out.println(c+"is biggest");
+-> if(a>b&&a>c&&a>d)
+          System.out.println(a+" is biggest");
+      else if(b>c&&b>d)
+          System.out.println(b+"is biggest");
+      else if(c>d)
+          System.out.println(c+"is biggest");
+      else 
+          System.out.println(d+"is biggest");
+->To find mangle=min*6
+         find hangle=hr*30+m*0.5
+                angle=0.0
+        if(mangle>hangle)
+             angle=mangle-hangle
+        else
+             angle=hangle-mangle
+        if(angle>180)
+            angle=360-angle
+-> to read the character from string is:: char ch=sc.next().charAt(0);
+->to reverse of number:: rev=rev*10+r;
+            angle
+
+
