@@ -1,0 +1,11 @@
+<div>
+    <input type="text" class="col-md-4 offset-4 card card-body"  (input)="get($event)" placeholder="search by movie name">
+    </div>
+    
+    
+            <div class=" col-md-3 float-left card card-body " *ngFor ="let new of news">
+                    <img src="{{new.Poster}}" style="height: 200px; width: 500px;" alt="">
+                    <h5>{{new.Title}}</h5>
+                  </div>
+                
+            
