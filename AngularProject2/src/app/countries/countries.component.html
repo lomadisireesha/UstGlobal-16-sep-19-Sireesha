@@ -1,0 +1,13 @@
+<div class="container">
+<select name="" id="" class="col-md-4 offset-4 mt-1 mb-1 card card-body" (change)="get($event)">
+    <option value="in">India</option>
+    <option value="ru">Russia</option>
+    <option value="ua">Dubai</option>
+    <option value="us">US</option>
+</select>
+</div>
+<div class=" col-md-3 float-left card card-body " *ngFor ="let new of news">
+    <img src="{{new.urlToImage}}" style="height: 200px; width: 500px;" alt="">
+    <h5>{{new.title}}</h5>
+  </div>
+  
