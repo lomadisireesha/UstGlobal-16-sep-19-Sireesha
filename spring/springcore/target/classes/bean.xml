@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd 
+    http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context.xsd">
+     
+     <bean id="hello" class="com.ust.spring.di.Hello" init-method="init" destroy-method="destroy">
+     <property name ="msg" value="Siri"/>
+     <property name="map">
+     <map>
+     <entry key="One" value="1"/>
+     <entry key="Two" value="2"/>
+     </map>
+     
+     </property>
+     </bean>
+     <bean id="dog" class="com.ust.spring.di.Dog" primary="true"/>
+      <bean id="human" class="com.ust.spring.di.Human" />
+      <bean id="animal" class="com.ust.spring.di.Cat"/>
+       <bean id="pet" class="com.ust.spring.di.Pet" autowire=" byName">
+	 <property name="name" value="Jhonny"/>
+        <!-- <property name="animal" ref="dog"/> -->
+      <!-- <constructor-arg name="name" value="jhonny"/> --> 
+       <!--  <constructor-arg name="animal" ref="dog"/>   -->
+       </bean>
+       <bean id="beanPostprocessor" class="com.ust.spring.di.BeanPostProcessorClass"/>
+       <bean id="beanFactoryPostprocessor" class="com.ust.spring.di.BeanFactoryPostProcessorClass"/>
+</beans> 
