@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@page session="false" %><!-- As e dont need session here -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,28 +7,33 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h3>${msg}</h3>
-
 <fieldset>
-	<legend>Login</legend>
-	<form action="./login" method="post">
+	<legend>CreateProfile</legend>
+	<form action="./createprofile" method="post">
 		<table>
 			<tr>
-				<td>ID:</td>
-				<td><input type="number" name="id"></td>
+				<td>Name:</td>
+				<td><input type="text" name="name"></td>
+			</tr>
+			<tr>
+				<td>Email:</td>
+				<td><input type="email" name="email"></td>
 			</tr>
 			<tr>
 				<td>Password:</td>
 				<td><input type="password" name="password"></td>
 			</tr>
+			
+			
 			<tr>
 				<td><input type="reset" value="Reset"></td>
-				<td><input type="submit" name="Login"></td>
+				<td><input type="submit" value="CreateProfile"></td>
 			</tr>
 		</table>
 	</form>
 </fieldset>
-<a href="./createprofile">Click here to CreateProfile</a>
+<a href="./login">Login</a>
+
 
 </body>
 </html>
