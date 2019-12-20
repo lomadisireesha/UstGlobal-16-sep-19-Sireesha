@@ -1,0 +1,32 @@
+<div class="col-md-6 offset-3 mt-4 mb-4">
+    <!-- <form #search = 'ngForm' (ngSubmit)='searchBook()'> -->
+       Search Here : <input type="text" name="search" id="search" required="required" [(ngModel)]="search" class="form control" placeholder="Enter the book name to search">
+        
+    <!-- </form> -->
+    <br>
+    <br>
+    <br>
+    <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr class ="card-body"  border="2px">
+                    <th>bid</th>
+                    <th>author</th>
+                    <th>bname</th>     
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let getbook of books | pipe:search '>
+                    <td>{{getbook.bid}}</td>
+                    <td>{{getbook.author}}</td>
+                    <td>{{getbook.bname}}</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+            <!-- <div style="text-align: center;">
+                <a class="nav-link" routerLink="/requestbook">click here to request book<span class="sr-only">(current)</span></a>
+            </div>
+     -->
+        

@@ -1,0 +1,25 @@
+<div class="col-md-6 offset-3 mt-4 mb-4">
+        <table class="table table bordered table-hover">
+            <thead class="thead-dark">
+                <tr borger="2px">
+                    <th>BookId</th>
+                    <th>AuthorName</th>
+                    <th>BookName</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let book of books'>
+                    <td>{{book.BookId}}</td>
+                    <th>{{book.AuthorName}}</th>
+                    <th>{{book.BookName}}</th>
+
+
+                </tr>
+            </tbody>
+        </table>
+       </div>
+    
+    
+    
+    

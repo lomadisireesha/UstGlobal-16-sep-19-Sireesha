@@ -1,0 +1,59 @@
+<div class="alert alert-danger" *ngIf='error'>{{error}}</div>
+<div class="col-md-4 offset-md-4 mt-5 card">
+    <div class="card-header">
+        <div class="card-title">
+            <h4>Add User</h4>
+        </div>
+    </div>
+    <div class="card-body">
+        <form #registerForm='ngForm' (ngSubmit)='register(registerForm)'>
+            <div class="form-group">
+                <input type="text" name="name" id="name" #name='ngModel' ngModel class="form-control mb-3"
+                    placeholder="Enter Name..." required pattern="[A-Za-z]" minlength="12">
+                <div *ngIf="name.invalid && name.touched">
+                    <p *ngIf="name.errors.required" class="text-danger">*This field is mandatory
+                        <p *ngIf="name.errors.minlength" class="text-danger">*This field accepts minimum
+                            12 characters
+                            <p *ngIf="name.errors.pattern" class="text-danger">*This field accepts only letters
+
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" id="email" #email='ngModel' ngModel class="form-control mb-3"
+                    placeholder="Enter Email..." required patten="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                <div *ngIf="email.invalid && email.touched">
+                    <p *ngIf="email.errors.required" class="text-danger">*This field is mandatory
+                        <p *ngIf="email.errors.minlength" class="text-danger">*This field accepts minimum
+                            12 characters
+                            <p *ngIf="email.errors.patten" class="text-danger">*This field accepts special
+                                characters
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" id="password" #password='ngModel' ngModel
+                    class="form-control mb-3" placeholder="Enter password..." required
+                    pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{6,12}">
+                <div *ngIf="password.invalid && password.touched">
+                    <p *ngIf="password.errors.required" class="text-danger">*This field is mandatory
+                        <p *ngIf="password.errors.minlength" class="text-danger">*This field accepts minimum
+                            12 characters
+                            <p *ngIf="password.errors.pattern" class="text-danger">*This field accepts atleast on
+                                special characters
+                                12 characters
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="text" name="role" id="role" #role='ngModel' ngModel class="form-control mb-3"
+                    placeholder="Enter Role..." required pattern="[A-Za-z]">
+                <div *ngIf="role.invalid && role.touched">
+                    <p *ngIf="role.errors.required" class="text-danger">*This field is mandatory
+                        <p *ngIf="role.errors.minlength" class="text-danger">*This field accepts minimum
+                            12 characters
+                            <p *ngIf="role.errors.pattern" class="text-danger">*This field accepts only
+                                alphabets
+                </div>
+            </div>
+            <button type="submit" class="float-right btn btn-dark" >Add</button>
+        </form>
+    </div>
+</div>

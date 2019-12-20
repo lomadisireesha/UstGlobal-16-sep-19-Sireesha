@@ -1,0 +1,30 @@
+<div class="col-md-6 offset-3 mt-4 mb-4">
+
+       Search Here : <input type="text" name="search" id="search" required="required" [(ngModel)]="search" class="form control" style="width: 400px;" placeholder="Enter the user name to search">
+    <br>
+    <br>
+    <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr class ="card-body"  border="2px">
+                    <th>id</th>
+                    <th>name</th>
+                    <th>email</th>  
+                    <th>role</th> 
+                    <th>delete</th> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let use of user | userpipe:search '>
+                    <td>{{use.id}}</td>
+                    <td>{{use.name}}</td>
+                    <td>{{use.email}}</td>
+                    <td>{{use.role}}</td>
+                    <td><button class="btn btn-danger" (click)="delete(use.id)">deleteuser</button></td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+
+        

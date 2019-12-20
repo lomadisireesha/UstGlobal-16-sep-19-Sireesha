@@ -1,0 +1,32 @@
+<div class="col-md-6 offset-3 mt-4 mb-4">
+    <h4>Requested Book</h4>
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr border="2px">
+                <th>studentId</th>
+                <th>bookId</th>
+                <th>bookname</th>
+                <th>author</th>
+                <th>Date On Requestedth>
+                <th>request</th>
+                <th>deleteRequest</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let book of books.requestedbook'>
+                <td>{{book.studentId}}</td>
+                <td>{{book.bookid}}</td>
+                <td>{{book.bookname}}</td>
+                <td>{{book.author}}</td>
+                <td>{{book.date}}</td>
+                <td><button class="btn btn-success" routerLink="/issuedbook">accept </button></td>
+                <td><button class="btn btn-danger" (click)="delete(book.bookid)">deleteRequest</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- <div style="text-align: center;">
+                <a class="nav-link" routerLink="/issuedbook">click here to issue<span class="sr-only">(current)</span></a>
+            </div> -->

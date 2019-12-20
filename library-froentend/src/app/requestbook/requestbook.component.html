@@ -1,0 +1,21 @@
+<br>
+<br>
+<h2 style="text-align: center;">Request Book Here</h2>
+<div class="col-md-6 offset-md-3 mt-5">
+    <div class="alert alert-danger" *ngIf='error'>{{error}}</div>
+    <form #loginForm='ngForm' (ngSubmit)='login(loginForm)'>
+        <input type="number" name="sid" id="sid"  placeholder="Enter Student Id"
+        #sid='ngModel' ngModel class="form-control mb-3">
+        <input type="text" name="name" id="name" placeholder="Enter Book Name"
+        #bookname='ngModel' ngModel class="form-control mb-3">
+        <input type="number" name="bid" id="bid"  placeholder="Enter Book Id"
+        #bid='ngModel' ngModel class="form-control mb-3">
+        <input type="text" name="name" id="name" placeholder="Enter Author Name"
+        #authorname='ngModel' ngModel class="form-control mb-3">
+        <input type="date" name="dob" id="dob"  placeholder="Enter DOR"
+        #dob='ngModel' ngModel class="form-control mb-3">
+        <button class="btn btn-outline-dark" type="submit">Make Request</button>
+    </form>
+</div>
+
+

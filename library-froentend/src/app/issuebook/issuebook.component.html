@@ -1,0 +1,25 @@
+<div class="col-md-6 offset-3 mt-4 mb-4">
+    <table class="table table bordered table-hover">
+        <thead class="thead-dark">
+            <tr borger="2px">
+                <th>BookId</th>
+                <th>BookName</th>
+                <th>Fine</th>
+                <th>IssueDate</th>
+                <th>ReturnDate</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let book of books'>
+                <td>{{book.BookId}}</td>
+                <th>{{book.BookName}}</th>
+                <th>{{book.Fine}}</th>
+                <th>{{book.IssueDate}}</th>
+                <th>{{book.ReturnDate}}</th>
+            </tr>
+        </tbody>
+    </table>
+   </div>
+
+
+
