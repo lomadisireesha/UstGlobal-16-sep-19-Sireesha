@@ -1,0 +1,62 @@
+<div>
+    <div class="container py-5" style="background:gainsboro">
+      <div class="card" style="width: 600px; margin: auto;">
+        <div class="card-header bg-primary text-white">
+          <h4 class="text-uppercase text-center">Product Info</h4>
+        </div>
+        <div class="card-body">
+          <div class="row">
+  
+            <div class="col-sm-6 col-md-6 col-xs-12">
+              <form #deleteProduct="ngForm" (ngSubmit)="getProductInfo(deleteProduct)" method="GET">
+  
+                <div class="form-group mt-2">
+                  <label for="pid">Id</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <i class="fa fa-user"></i>
+                      </span>
+                    </div>
+                    <input class="form-control" type="number" name="pid" #pid="ngModel" ngModel required
+                      placeholder="Enter Product Id ">
+                    <div *ngIf="pid.invalid && pid.touched">
+                      <p *ngIf="pid.errors.required" class="text-danger">*This field is mandatory
+                       
+                    </div>
+                  </div>
+                </div>
+              
+              </form>
+            </div>
+          </div>
+  
+          <br>
+          <!-- INFO -->
+          <table class="table table-bordered" *ngIf="productData" >
+            <thead class="thead-grey">
+              <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Product Price</th>
+                <th>Product Category</th>
+                <th>Product Company</th>
+                <th>Product Quantity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{productData.pid}}</td>
+                <td>{{productData.pname}}</td>
+                <td>{{productData.price}}</td>
+                <td>{{productData.category}}</td>
+                <td>{{productData.company}}</td>
+                <td>{{productData.quantity}}</td>
+              </tr>
+            </tbody>
+          </table>
+          
+        </div>
+      </div>
+    </div>
+  </div>

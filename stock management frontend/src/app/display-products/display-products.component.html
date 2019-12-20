@@ -1,0 +1,37 @@
+<div style="background:gainsboro">
+    <div class="card  text-black">
+      <div class="card-img-overlay">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+  
+              <div class="container ">
+                <table class="table table-bordered mt-2 table-hover " style="border-style: solid; border-width: 1px;">
+                  <thead>
+                    <tr class="text-center text-dark">
+                      <th>Product Id</th>
+                      <th>Product Name</th>
+                      <th>Product Price</th>
+                      <th>Product quantity</th>
+                      <th>Product Category</th>
+                      <th>Product Company</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let product of products" class="text-center text-info">
+                      <td>{{product.pid}}</td>
+                      <td>{{product.pname}}</td>
+                      <td>{{product.price}}</td>
+                      <td>{{product.quantity}}</td>
+                      <td>{{product.category}}</td>
+                      <td>{{product.company}}</td>
+                     </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
